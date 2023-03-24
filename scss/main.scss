@@ -13,21 +13,22 @@
 body {
   display: grid;
   justify-content: center;
+  align-items: flex-start;
   background-color: #333;
   color: #eee;
 }
 
 .content {
   max-width: 500px;
-}
-
-.visual {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  &__image {
-  }
+  border: 1px solid #fff;
+}
+
+.visual {
+  margin-top: 100px;
   &__text {
     text-align: center;
     font-size: 40px;
@@ -57,5 +58,32 @@ body {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+.text-scroll {
+  width: 60%;
+  margin-bottom: 200px;
+  .item {
+    color: #000;
+    display: inline;
+    margin: 5px;
+    line-height: 1.2;
+    font-size: 30px;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border: 5px solid #000;
+      border-radius: 50%;
+    }
+  }
+}
+
+.item#on {
+  color: #eee;
+  &::before {
+    border: 5px solid #eee;
   }
 }

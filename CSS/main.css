@@ -91,19 +91,22 @@ th {
 body {
   display: grid;
   justify-content: center;
+  align-items: flex-start;
   background-color: #333;
   color: #eee;
 }
 
 .content {
   max-width: 500px;
-}
-
-.visual {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 1px solid #fff;
+}
+
+.visual {
+  margin-top: 100px;
 }
 .visual__text {
   text-align: center;
@@ -134,4 +137,30 @@ body {
   100% {
     transform: translateY(0);
   }
+}
+.text-scroll {
+  width: 60%;
+  margin-bottom: 200px;
+}
+.text-scroll .item {
+  color: #000;
+  display: inline;
+  margin: 5px;
+  line-height: 1.2;
+  font-size: 30px;
+}
+.text-scroll .item::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 5px solid #000;
+  border-radius: 50%;
+}
+
+.item#on {
+  color: #eee;
+}
+.item#on::before {
+  border: 5px solid #eee;
 }
