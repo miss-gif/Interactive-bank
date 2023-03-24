@@ -1,0 +1,42 @@
+/* Media Queries */
+@mixin media($media) {
+  @media #{$media} {
+    @content;
+  }
+}
+
+/* Flexbox */
+@mixin flex($direction, $justify-content, $align-items) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+/* text-effect */
+@mixin text-effect($color, $size, $weight) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* responsive */
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin hide($breakpoint) {
+  @include responsive($breakpoint) {
+    display: none;
+  }
+}
+
+@mixin show($breakpoint) {
+  display: none;
+  @include responsive($breakpoint) {
+    display: block;
+  }
+}

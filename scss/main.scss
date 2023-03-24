@@ -1,0 +1,61 @@
+/* base */
+@import "base/reset";
+@import "base/typography";
+/* utils */
+@import "utils/variables";
+@import "utils/mixins";
+/* layout */
+@import "layout/header";
+@import "layout/footer";
+/* components */
+@import "components/navigation";
+
+body {
+  display: grid;
+  justify-content: center;
+  background-color: #333;
+  color: #eee;
+}
+
+.content {
+  max-width: 500px;
+}
+
+.visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__image {
+  }
+  &__text {
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.5;
+    margin: 30px 0;
+  }
+  &__scroll-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 100px 0;
+    text-transform: capitalize;
+    .scroll-down-image {
+      width: 50px;
+      animation: upAndDown 1s infinite;
+    }
+  }
+}
+
+@keyframes upAndDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
